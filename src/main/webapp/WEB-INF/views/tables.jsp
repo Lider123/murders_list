@@ -1,4 +1,4 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
  
@@ -19,7 +19,7 @@
                     <th>Victim gender</th>
                     <th>Victim address</th>
                     <th>Killer No</th>
-                    <th></th>
+                    <th>Action</th>
                 </tr>
                 
                 <c:forEach var="murder" items="${listMurder}">
@@ -29,7 +29,11 @@
                     <td>${murder.victimGender}</td>
                     <td>${murder.victimAddress}</td>
                     <td>${murder.killerId}</td>
-                    <td><a href="tables/editMurder?id=${murder.id}">Edit</a><a href="tables/deleteMurder?id=${murder.id}">Delete</a></td>
+                    <td>
+                    	<a href="tables/editMurder?id=${murder.id}">Edit</a>
+                    	&nbsp;&nbsp;&nbsp;&nbsp;
+                    	<a href="tables/deleteMurder?id=${murder.id}">Delete</a>
+                    </td>
                 </tr>
                 </c:forEach>             
             </table>
