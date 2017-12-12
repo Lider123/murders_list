@@ -1,17 +1,34 @@
 package ru.babaets.databaseinterface.model;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class Murder {
 	
+	@NotNull
 	private int id;
+	
+	@NotEmpty(message = "Enter victim name!")
+	@Size(max = 40)
 	private String victimName;
-	private String victimGender;
+	
+	@NotEmpty(message = "Enter victim gender!")
+	@Pattern(regexp = "^[mf]{1}$", message = "Enter single character \'m\' or \'f\'!")
+	private String victimGender = "m";
+	
+	@Size(max = 40)
 	private String victimAddress;
-	private int killerId;
+	
+	@Pattern(regexp = "^[0-9]*$", message = "Enter an integer!")
+	private String killerId = "";
 	
 	public Murder() {
 	}
 
-	public Murder(String victimName, String victimGender, String victimAddress, int killerId) {
+	public Murder(String victimName, String victimGender, String victimAddress, String killerId) {
 		this.victimName = victimName;
 		this.victimGender = victimGender;
 		this.victimAddress = victimAddress;
@@ -50,11 +67,11 @@ public class Murder {
 		this.victimAddress = victimAddress;
 	}
 
-	public int getKillerId() {
+	public String getKillerId() {
 		return killerId;
 	}
 
-	public void setKillerId(int killerId) {
+	public void setKillerId(String killerId) {
 		this.killerId = killerId;
 	}
 }

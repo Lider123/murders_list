@@ -14,7 +14,7 @@
             <h3><a href="tables/addMurder">Add murder</a></h3>
             <table border="1">
                 <tr>
-                    <th>No</th>
+                    <th>№</th>
                     <th>Victim name</th>
                     <th>Victim gender</th>
                     <th>Victim address</th>
@@ -43,7 +43,7 @@
             <h3><a href="tables/addKiller">Add killer</a></h3>
             <table border="1">
                 <tr>
-                    <th>No</th>
+                    <th>№</th>
                     <th>Killer name</th>
                     <th></th>
                 </tr>

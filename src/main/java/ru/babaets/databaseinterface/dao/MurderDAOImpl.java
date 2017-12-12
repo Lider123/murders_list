@@ -48,7 +48,7 @@ public class MurderDAOImpl implements MurderDAO {
 
 	@Override
 	public Murder getMurder(int murderId) {
-		String sql = "SELECT * FROM murders WHERE murder_id=?";
+		String sql = "SELECT * FROM murders WHERE murder_id=" + murderId;
 		return jdbcTemplate.query(sql, new ResultSetExtractor<Murder>() {
 
 			@Override
@@ -81,7 +81,7 @@ public class MurderDAOImpl implements MurderDAO {
 		aMurder.setVictimName(rs.getString("victim_name"));
 		aMurder.setVictimGender(rs.getString("victim_gender"));
 		aMurder.setVictimAddress(rs.getString("victim_address"));
-		aMurder.setKillerId(rs.getInt("killer_id"));
+		aMurder.setKillerId(rs.getString("killer_id"));
 		
 		return aMurder;
 	}
